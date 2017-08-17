@@ -27,6 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+document.getElementById('btnCalculate').addEventListener('click', this.onCalculate, false);
     },
     // deviceready Event Handler
     //
@@ -45,5 +46,18 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+onCalculate: function() {
+var b = document.getElementById('cel').value;
+if (b.length == 0)
+document.getElementById('res').innerHTML = "ERROR: Please enter a value";
+else {
+var x = parseInt(b);
+var y=x*9;
+var z=y/5;
+var temp=z+32;
+
+document.getElementById('far').innerHTML = temp;
+}
+}
 };
